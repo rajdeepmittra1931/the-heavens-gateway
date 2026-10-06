@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Heaven's Gateway — Tailor-Made Private Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#fbf8f3;--surface:#fff;--sand:#f3ece0;--ink:#1c1a17;--ink-soft:#4b4640;--ink-muted:#8a8278;--gold:#b8893b;--gold-b:#d9a94e;--gold-s:#ead9b8;--ocean:#1f6f7a;--plum:#3b2c39;--plum-d:#2c2029;--line:#e7ded0;--dp:'Cormorant Garamond',Georgia,serif;--sans:'Inter',system-ui,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:var(--canvas);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;}a{text-decoration:none;color:inherit;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:linear-gradient(to bottom,rgba(44,32,41,.82),transparent);}
+.logo{font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;letter-spacing:.02em;}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.65;font-weight:400;margin-top:1px;}
+.nav-r{display:flex;align-items:center;gap:26px;}
+.nav-r a{color:rgba(255,255,255,.85);font-size:13px;font-weight:500;letter-spacing:.04em;transition:color .2s;cursor:pointer;}
+.nav-r a:hover{color:#fff;}
+.nav-btn{background:var(--gold) !important;color:#fff !important;padding:10px 22px;font-size:11px !important;font-weight:600 !important;letter-spacing:.12em;text-transform:uppercase;}
+@media(max-width:768px){.nav-r a:not(.nav-btn){display:none;}}
+.hero{position:relative;height:100vh;min-height:580px;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;}.hero-bg img{width:100%;height:100%;object-fit:cover;animation:drift 24s ease-in-out infinite;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(44,32,41,.75),rgba(28,26,23,.45) 55%,rgba(28,26,23,.75));}
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:160px;background:linear-gradient(transparent,var(--canvas));}
+.hero-c{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:0 48px;padding-top:80px;}
+.hero-eye{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold-b);margin-bottom:18px;}
+.hero h1{font-family:var(--dp);font-size:clamp(46px,8vw,96px);font-weight:600;text-transform:uppercase;letter-spacing:.05em;line-height:.98;color:#fff;text-shadow:0 2px 28px rgba(0,0,0,.4);max-width:760px;}
+.hero h1 em{font-style:italic;color:var(--gold-b);font-weight:400;}
+.hero-sub{color:rgba(255,255,255,.78);font-size:16px;max-width:520px;margin-top:22px;line-height:1.7;}
+.hero-pills{margin-top:32px;display:flex;flex-wrap:wrap;gap:10px;}
+.pill{border:1px solid rgba(255,255,255,.38);background:rgba(255,255,255,.1);padding:10px 22px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;backdrop-filter:blur(8px);transition:background .2s;}
+.pill:hover,.pill.act{background:var(--gold);border-color:var(--gold);}
+@keyframes drift{0%,100%{transform:scale(1.06) translate(0,0);}50%{transform:scale(1.13) translate(-2%,-1.5%);}}
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(243,236,224,.7);padding:18px 48px;display:flex;flex-wrap:wrap;justify-content:center;gap:28px;}
+.ti{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500;color:var(--ink-soft);}
+.ck{color:var(--gold);}
+.sec{padding:84px 0;}
+.sec.sand{background:rgba(243,236,224,.45);}
+.sec.dark{background:var(--plum-d);}
+.inner{max-width:1280px;margin:0 auto;padding:0 48px;}
+.eye{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:600;color:var(--gold);display:block;margin-bottom:14px;}
+.sec-title{font-family:var(--dp);font-size:clamp(28px,4vw,48px);font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);line-height:1.06;}
+.sec-title.light{color:#fff;}
+.cbanner{position:relative;height:280px;display:flex;align-items:flex-end;overflow:hidden;border-radius:6px;margin-bottom:44px;}
+.cbanner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.cbanner-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.92) 0%,rgba(28,26,23,.25) 60%,transparent 100%);}
+.cbanner-info{position:relative;z-index:2;padding:28px 34px;}
+.c-flag{font-size:34px;margin-bottom:6px;}
+.c-name{font-family:var(--dp);font-size:52px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#fff;line-height:1;}
+.c-tag{font-size:14px;color:rgba(255,255,255,.68);margin-top:6px;}
+.c-count{position:absolute;bottom:28px;right:34px;font-family:var(--dp);font-size:72px;font-weight:600;color:rgba(255,255,255,.1);line-height:1;z-index:2;}
+.pgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+@media(max-width:1100px){.pgrid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:680px){.pgrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:440px){.pgrid{grid-template-columns:1fr;}}
+.pcard{border-radius:16px;border:1px solid var(--line);background:var(--surface);overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease;box-shadow:0 2px 14px rgba(0,0,0,.06);}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 18px 52px rgba(0,0,0,.15);}
+.pcard-img{height:210px;position:relative;overflow:hidden;}
+.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;}
+.pcard:hover .pcard-img img{transform:scale(1.08);}
+.pcard-badge{position:absolute;top:12px;left:12px;background:var(--plum-d);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:99px;}
+.pcard-days{position:absolute;top:12px;right:12px;background:rgba(184,137,59,.9);color:#fff;font-size:10px;font-weight:600;letter-spacing:.06em;padding:5px 11px;border-radius:99px;}
+.pcard-body{padding:18px;flex:1;display:flex;flex-direction:column;}
+.pcard-name{font-family:var(--dp);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.2;}
+.pcard-route{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ocean);margin-bottom:8px;}
+.pcard-hi{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;}
+.hi{font-size:10px;background:var(--sand);color:var(--ink-soft);padding:3px 9px;border-radius:99px;}
+.pcard-desc{font-size:12.5px;color:var(--ink-soft);line-height:1.6;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.pcard-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);}
+.pcard-price{font-size:12px;color:var(--ink-muted);margin-bottom:8px;}
+.pcard-price strong{color:var(--ink);font-size:15px;font-weight:600;}
+.ebtn{display:block;width:100%;text-align:center;background:var(--plum-d);color:#fff;padding:11px;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s;border-radius:4px;font-family:var(--sans);}
+.ebtn:hover{background:var(--gold);}
+/* MODAL */
+.mbg{display:none;position:fixed;inset:0;background:rgba(28,26,23,.72);z-index:999;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;}
+.mbg.open{display:flex;}
+.modal{background:var(--surface);max-width:560px;width:100%;border-radius:18px;overflow:hidden;position:relative;box-shadow:0 36px 90px rgba(0,0,0,.38);max-height:92vh;overflow-y:auto;}
+.m-hero{height:180px;position:relative;overflow:hidden;}
+.m-hero img{width:100%;height:100%;object-fit:cover;}
+.m-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(44,32,41,.92),rgba(44,32,41,.28));}
+.m-info{position:absolute;bottom:20px;left:24px;right:56px;}
+.m-name{font-family:var(--dp);font-size:24px;font-weight:600;color:#fff;line-height:1.1;}
+.m-route{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-b);margin-top:4px;}
+.m-close{position:absolute;top:13px;right:13px;background:rgba(255,255,255,.18);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(4px);transition:background .2s;}
+.m-close:hover{background:rgba(255,255,255,.35);}
+.m-body{padding:26px;}
+.m-meta{display:flex;gap:12px;margin-bottom:22px;flex-wrap:wrap;}
+.mpill{display:flex;align-items:center;gap:6px;background:var(--sand);padding:7px 13px;border-radius:99px;font-size:12px;color:var(--ink-soft);font-weight:500;}
+.mpill span{font-weight:600;color:var(--ink);}
+.fr{margin-bottom:15px;}
+.fr label{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:6px;}
+.fr input,.fr select,.fr textarea{width:100%;border:1.5px solid var(--line);background:var(--canvas);padding:11px 14px;font-size:14px;font-family:var(--sans);color:var(--ink);border-radius:6px;outline:none;transition:border-color .2s;}
+.fr input:focus,.fr select:focus,.fr textarea:focus{border-color:var(--gold);}
+.fr textarea{resize:vertical;min-height:76px;}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+@media(max-width:420px){.fg2{grid-template-columns:1fr;}}
+.fsub{width:100%;background:var(--plum-d);color:#fff;border:none;padding:15px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:6px;margin-top:6px;transition:background .2s;font-family:var(--sans);}
+.fsub:hover{background:var(--gold);}
+.fnote{font-size:11.5px;color:var(--ink-muted);text-align:center;margin-top:10px;}
+.success{display:none;text-align:center;padding:32px 24px;}
+.success .tick{font-size:52px;margin-bottom:14px;}
+.success h3{font-family:var(--dp);font-size:28px;color:var(--ink);margin-bottom:8px;}
+.success p{font-size:14px;color:var(--ink-soft);line-height:1.6;}
+/* WHY */
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+@media(max-width:900px){.wgrid{grid-template-columns:1fr 1fr;}}
+.wcard{border:1px solid var(--line);background:var(--surface);padding:28px 22px;border-radius:14px;}
+.wnum{font-family:var(--dp);font-size:36px;color:var(--gold-s);margin-bottom:12px;}
+.wt{font-family:var(--dp);font-size:19px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.wb{font-size:13px;color:var(--ink-soft);line-height:1.65;}
+/* DREAMS */
+.dl{display:grid;grid-template-columns:auto 1fr;gap:72px;align-items:center;}
+@media(max-width:760px){.dl{grid-template-columns:1fr;gap:36px;}}
+.d100{font-family:var(--dp);font-size:clamp(90px,16vw,170px);line-height:.85;-webkit-text-stroke:1.5px var(--gold-b);color:transparent;}
+.d-sub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-b);margin-top:12px;}
+.dr h2{font-family:var(--dp);font-size:clamp(24px,3.5vw,36px);font-weight:500;font-style:italic;color:#fff;margin-bottom:10px;line-height:1.15;}
+.dr p{color:rgba(255,255,255,.65);font-size:15px;line-height:1.7;margin-bottom:24px;}
+.dsteps{display:flex;flex-direction:column;}
+.dstep{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);}
+.dstep:last-child{border-bottom:1px solid rgba(255,255,255,.1);}
+.dsn{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--gold-b);padding-top:2px;}
+.dst{font-family:var(--dp);font-size:17px;color:#fff;margin-bottom:3px;}
+.dsb{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.6;}
+/* TESTI */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
+@media(max-width:768px){.tgrid{grid-template-columns:1fr;}}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;}
+.tst{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.tq{font-family:var(--dp);font-size:17px;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:20px;}
+.tn{font-weight:600;font-size:13px;color:var(--ink);}
+.to{font-size:11.5px;color:var(--ink-muted);margin-top:2px;}
+/* CTA */
+.cta-sec{text-align:center;padding:96px 40px;}
+.cta-sec h2{font-family:var(--dp);font-size:clamp(32px,5vw,60px);font-weight:500;font-style:italic;color:#fff;max-width:680px;margin:0 auto 16px;line-height:1.08;}
+.cta-sec h2 em{color:var(--gold-b);font-style:normal;}
+.cta-sec p{color:rgba(255,255,255,.65);max-width:460px;margin:0 auto 34px;font-size:15px;}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cbtn{display:inline-block;background:var(--gold);color:#fff;padding:15px 36px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .2s;cursor:pointer;}
+.cbtn:hover{background:var(--gold-b);}
+.cbtn.out{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;}
+.cbtn.out:hover{border-color:#fff;}
+footer{background:var(--plum-d);padding:60px 48px 38px;}
+.fg{max-width:1280px;margin:0 auto;}
+.fgri{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:38px;margin-bottom:46px;}
+@media(max-width:760px){.fgri{grid-template-columns:1fr 1fr;}}
+.fc h4{font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-b);margin-bottom:14px;font-weight:600;}
+.fb{font-family:var(--dp);font-size:22px;color:#fff;margin-bottom:4px;}
+.ft{font-family:var(--dp);font-size:15px;font-style:italic;color:var(--gold-b);margin-bottom:12px;}
+.fd{font-size:12.5px;color:rgba(255,255,255,.45);max-width:230px;line-height:1.65;}
+.fc a{display:block;font-size:13px;color:rgba(255,255,255,.58);margin-bottom:8px;transition:color .2s;}
+.fc a:hover{color:#fff;}
+.fbot{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:11.5px;color:rgba(255,255,255,.3);flex-wrap:wrap;gap:10px;}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="mbg" id="mbg" onclick="closeMBG(event)">
+  <div class="modal" id="modal">
+    <div class="m-hero">
+      <img id="mImg" src="" alt="">
+      <div class="m-ov"></div>
+      <div class="m-info">
+        <div class="m-name" id="mName"></div>
+        <div class="m-route" id="mRoute"></div>
+      </div>
+      <button class="m-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="m-body">
+      <div class="m-meta">
+        <div class="mpill">🗓 <span id="mDays"></span></div>
+        <div class="mpill">💰 From <span id="mPrice"></span></div>
+        <div class="mpill">✅ Visa Handled</div>
+        <div class="mpill">🇨🇦 Canada-Based</div>
+      </div>
+      <div id="fWrap">
+        <form onsubmit="submitForm(event)">
+          <div class="fg2">
+            <div class="fr"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div>
+            <div class="fr"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required></div>
+          </div>
+          <div class="fg2">
+            <div class="fr"><label>Phone / WhatsApp</label><input type="tel" name="phone" placeholder="+1 or +91 ..."></div>
+            <div class="fr"><label>Travel Month</label>
+              <select name="month">
+                <option value="">Select month</option>
+                <option>September 2026</option><option>October 2026</option><option>November 2026</option>
+                <option>December 2026</option><option>January 2027</option><option>February 2027</option>
+                <option>March 2027</option><option>April 2027</option><option>Flexible / TBD</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg2">
+            <div class="fr"><label>Number of Travellers</label>
+              <select name="travellers"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select>
+            </div>
+            <div class="fr"><label>Package Type</label>
+              <select name="ptype"><option>Group Journey</option><option>Honeymoon</option><option>Business Trip</option><option>Family Journey</option><option>Custom</option></select>
+            </div>
+          </div>
+          <div class="fr"><label>Message (Optional)</label><textarea name="message" placeholder="Any specific requests or questions..."></textarea></div>
+          <input type="hidden" id="hPkg" name="pkg">
+          <button type="submit" class="fsub">Send Enquiry →</button>
+          <p class="fnote">We reply within 24 hours · team.theheavensgateway@gmail.com</p>
+        </form>
+      </div>
+      <div class="success" id="successDiv">
+        <div class="tick">✅</div>
+        <h3>Enquiry Sent!</h3>
+        <p>Our team will get back to you within 24 hours.<br><br><strong>team.theheavensgateway@gmail.com</strong><br><br>Follow us: <strong>@theheavens_gateway</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">The Heaven's Gateway<small>Dream It · Document It · Live It</small></div>
+  <div class="nav-r">
+    <a href="#bali">Bali</a>
+    <a href="#thailand">Thailand</a>
+    <a href="#vietnam">Vietnam</a>
+    <a href="#dreams">100 Dreams</a>
+    <a onclick="openE('General Enquiry','All Destinations','Flexible','Custom Quote','https://images.unsplash.com/photo-1506905756-d19cf72c70a9?auto=format&fit=crop&w=800&q=80')" class="nav-btn">Book Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=2000&h=1200&q=80" alt="India Taj Mahal"></div>
+  <div class="hero-ov"></div><div class="hero-fade"></div>
+  <div class="hero-c">
+    <div class="hero-eye">Canada-Based · Premium Travel · Visa Handled</div>
+    <h1>India, Bali &amp;<br><em>Beyond.</em></h1>
+    <p class="hero-sub">20+ curated Asia packages — India, Bali, Thailand, Vietnam, Middle East, Europe and Africa. Private guides, visa handled, honeymoon packages available. Built for premium travellers worldwide.</p>
+    <div class="hero-pills">
+      <a href="#india" class="pill act">🇮🇳 India — Featured</a>
+      <a href="#bali" class="pill act">🇮🇩 Bali — Featured</a>
+      <a href="#thailand" class="pill act">🇹🇭 Thailand — Featured</a>
+      <a href="#vietnam" class="pill">🇻🇳 Vietnam</a>
+      <a href="#more" class="pill">All Destinations →</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="ti"><span class="ck">✓</span> Visa Handled</div>
+  <div class="ti"><span class="ck">✓</span> Private Guides & Drivers</div>
+  <div class="ti"><span class="ck">✓</span> Honeymoon Packages</div>
+  <div class="ti"><span class="ck">✓</span> Canada-Based Team</div>
+  <div class="ti"><span class="ck">✓</span> 100% Tailor-Made</div>
+  <div class="ti"><span class="ck">✓</span> 24/7 In-Country Support</div>
+</div>
+
+<!-- FEATURED ASIA BANNER -->
+<div style="background:var(--plum-d);padding:28px 48px;text-align:center;">
+  <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;">
+    <div style="font-family:var(--dp);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-b);">★ Asia Spotlight</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;">
+      <a href="#india" style="border:1px solid var(--gold-b);color:var(--gold-b);padding:9px 22px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='transparent'">🇮🇳 India</a>
+      <a href="#bali" style="border:1px solid var(--gold-b);color:var(--gold-b);padding:9px 22px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='transparent'">🇮🇩 Bali</a>
+      <a href="#thailand" style="border:1px solid var(--gold-b);color:var(--gold-b);padding:9px 22px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:background .2s;" onmouseover="this.style.background='var(--gold)'" onmouseout="this.style.background='transparent'">🇹🇭 Thailand</a>
+      <a href="#vietnam" style="border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.65);padding:9px 22px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;">🇻🇳 Vietnam</a>
+      <a href="#more" style="border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.65);padding:9px 22px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;">More Destinations ↓</a>
+    </div>
+  </div>
+</div>
+
+<!-- INDIA -->
+<section class="sec" id="india" style="background:linear-gradient(to bottom,#fff8f0,var(--canvas));">
+  <div class="inner">
+    <div class="cbanner" style="border:2px solid var(--gold);">
+      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&h=400&q=80" alt="India Taj Mahal">
+      <div class="cbanner-ov"></div>
+      <div class="cbanner-info">
+        <div class="c-flag">🇮🇳</div>
+        <div class="c-name">India</div>
+        <div class="c-tag">Palaces · Tigers · Sacred Rivers · Himalayas · Backwaters · Desert Forts</div>
+      </div>
+      <div style="position:absolute;top:22px;right:34px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 18px;z-index:2;">★ Featured</div>
+      <div class="c-count">5</div>
+    </div>
+    <div class="pgrid">
+
+      <div class="pcard" onclick="openE('Royal Rajasthan','Udaipur · Jodhpur · Jaisalmer','11 Days','$8,495','https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=700&h=500&q=80" alt="Rajasthan"><div class="pcard-badge">★ Most Popular</div><div class="pcard-days">11 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Royal Rajasthan</div>
+          <div class="pcard-route">Udaipur · Jodhpur · Jaisalmer</div>
+          <div class="pcard-hi"><span class="hi">Lake Palaces</span><span class="hi">Desert Forts</span><span class="hi">Blue City</span></div>
+          <p class="pcard-desc">Lake palaces, the blue city of Jodhpur and golden desert forts — eleven days living like the maharajas, with stays in converted royal palaces.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$8,495</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('The Golden Triangle','Delhi · Agra · Jaipur','8 Days','$4,995','https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=700&h=500&q=80" alt="Taj Mahal"><div class="pcard-badge">🏛 Classic</div><div class="pcard-days">8 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">The Golden Triangle</div>
+          <div class="pcard-route">Delhi · Agra · Jaipur</div>
+          <div class="pcard-hi"><span class="hi">Taj at Sunrise</span><span class="hi">Heritage Stays</span><span class="hi">Private Historian</span></div>
+          <p class="pcard-desc">India's iconic circuit done properly — Taj Mahal before the gates open, a private heritage hotel in Jaipur and a food walk through old Delhi with a local guide.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$4,995</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Kerala & the Backwaters','Kochi · Munnar · Alleppey','9 Days','$5,495','https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=700&h=500&q=80" alt="Kerala"><div class="pcard-badge">🌿 Backwaters</div><div class="pcard-days">9 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Kerala & the Backwaters</div>
+          <div class="pcard-route">Kochi · Munnar · Alleppey</div>
+          <div class="pcard-hi"><span class="hi">Private Houseboat</span><span class="hi">Tea Estate</span><span class="hi">Ayurvedic Spa</span></div>
+          <p class="pcard-desc">Tea hills, spice gardens and a private houseboat with chef drifting through palm-lined canals. India at its greenest and slowest.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$5,495</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Ladakh: Himalayan Kingdoms','Delhi · Leh · Pangong Lake','9 Days','$7,495','https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=700&h=500&q=80" alt="Ladakh"><div class="pcard-badge">🏔 Himalayan</div><div class="pcard-days">9 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Ladakh: Himalayan Kingdoms</div>
+          <div class="pcard-route">Delhi · Leh · Pangong Lake</div>
+          <div class="pcard-hi"><span class="hi">Cliff Monasteries</span><span class="hi">High Passes</span><span class="hi">Mirror Lakes</span></div>
+          <p class="pcard-desc">Cliff-top monasteries, high mountain passes and Pangong Lake mirroring the sky — the raw, silent India above the clouds.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$7,495</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Kashmir: Heaven on Earth','Srinagar · Gulmarg · Pahalgam','8 Days','$5,995','https://images.unsplash.com/photo-1548013661-13c8c7fb7a2b?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1548013661-13c8c7fb7a2b?auto=format&fit=crop&w=700&h=500&q=80" alt="Kashmir"><div class="pcard-badge">💍 Honeymoon</div><div class="pcard-days">8 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Kashmir: Heaven on Earth</div>
+          <div class="pcard-route">Srinagar · Gulmarg · Pahalgam</div>
+          <div class="pcard-hi"><span class="hi">Dal Lake Shikara</span><span class="hi">Luxury Houseboat</span><span class="hi">Wildflower Meadows</span></div>
+          <p class="pcard-desc">A shikara on Dal Lake at dawn, meadows of wildflowers in Gulmarg and a luxury houseboat with personal crew at dusk — the valley at its most serene.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$5,995</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BALI -->
+<section class="sec" id="bali" style="background:linear-gradient(to bottom,#fff8f0,var(--canvas));">
+  <div class="inner">
+    <div class="cbanner" style="border:2px solid var(--gold);">
+      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1400&h=400&q=80" alt="Bali">
+      <div class="cbanner-ov"></div>
+      <div class="cbanner-info"><div class="c-flag">🇮🇩</div><div class="c-name">Bali, Indonesia</div><div style="position:absolute;top:22px;right:34px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 18px;z-index:2;">★ Featured</div><div class="c-tag">Temples · Rice Terraces · Jungle · Beaches · Wellness · Spirituality</div></div>
+      <div class="c-count">5</div>
+    </div>
+    <div class="pgrid">
+
+      <div class="pcard" onclick="openE('Bali Signature Journey','Ubud · Seminyak · Uluwatu · Canggu','10 Days','$3,995','https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&h=500&q=80" alt="Bali Temple"><div class="pcard-badge">★ Most Popular</div><div class="pcard-days">10 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Bali Signature Journey</div>
+          <div class="pcard-route">Ubud · Seminyak · Uluwatu · Canggu</div>
+          <div class="pcard-hi"><span class="hi">Rice Terraces</span><span class="hi">Temple Ceremony</span><span class="hi">Cooking Class</span></div>
+          <p class="pcard-desc">Tegallalang rice terraces at sunrise, cliff-top sunset ceremony at Uluwatu, a private cooking class in an Ubud family home and spa evenings in Seminyak. Small group, maximum experience.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$3,995</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Bali Honeymoon Escape','Ubud · Seminyak · Private Cliff Villa','10 Days','$5,995','https://images.unsplash.com/photo-1518548419526-3f9a7b05f1b8?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1518548419526-3f9a7b05f1b8?auto=format&fit=crop&w=700&h=500&q=80" alt="Bali Honeymoon"><div class="pcard-badge">💍 Honeymoon</div><div class="pcard-days">10 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Bali Honeymoon Escape</div>
+          <div class="pcard-route">Ubud · Seminyak · Private Cliff Villa</div>
+          <div class="pcard-hi"><span class="hi">Private Pool Villa</span><span class="hi">Couples Spa</span><span class="hi">Cliff Dinner</span></div>
+          <p class="pcard-desc">Just the two of you — a private cliff-top dinner above the Indian Ocean, couples Balinese spa ritual, jungle pool villa and flexible dates built around your wedding calendar.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$5,995</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Bali Wellness Retreat','Ubud · Sidemen · Amed','8 Days','$4,295','https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=700&h=500&q=80" alt="Bali Wellness"><div class="pcard-badge">🧘 Wellness</div><div class="pcard-days">8 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Bali Wellness Retreat</div>
+          <div class="pcard-route">Ubud · Sidemen · Amed</div>
+          <div class="pcard-hi"><span class="hi">Daily Yoga</span><span class="hi">Healing Rituals</span><span class="hi">Meditation</span></div>
+          <p class="pcard-desc">Daily sunrise yoga, traditional Balinese healer consultation, healing ceremonies, silent walks through rice fields and a true digital detox — the reset you actually need.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$4,295</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Bali & Lombok Explorer','Bali · Gili Islands · Lombok','12 Days','$5,495','https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=700&h=500&q=80" alt="Bali Lombok"><div class="pcard-badge">🏝 Island Hop</div><div class="pcard-days">12 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Bali & Lombok Explorer</div>
+          <div class="pcard-route">Bali · Gili Islands · Lombok</div>
+          <div class="pcard-hi"><span class="hi">Sea Turtles</span><span class="hi">Snorkelling</span><span class="hi">Rinjani Volcano</span></div>
+          <p class="pcard-desc">Three Indonesian islands in one journey — Bali's temples and culture, snorkelling with sea turtles at Gili Trawangan and Lombok's Rinjani volcano at dawn. The ultimate island adventure.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$5,495</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Bali Cultural Deep Dive','Ubud · Kintamani · Tanah Lot · Besakih','7 Days','$3,195','https://images.unsplash.com/photo-1510797215324-95aa89f43c33?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1510797215324-95aa89f43c33?auto=format&fit=crop&w=700&h=500&q=80" alt="Bali Culture"><div class="pcard-badge">🏛 Cultural</div><div class="pcard-days">7 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Bali Cultural Deep Dive</div>
+          <div class="pcard-route">Ubud · Kintamani · Tanah Lot · Besakih</div>
+          <div class="pcard-hi"><span class="hi">Sacred Temples</span><span class="hi">Art Villages</span><span class="hi">Kecak Fire Dance</span></div>
+          <p class="pcard-desc">Besakih Mother Temple at dawn, traditional Kecak fire dance performance, silver and batik artisan villages, a local market morning and a private guide who grew up on the island.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$3,195</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THAILAND -->
+<section class="sec" id="thailand" style="background:linear-gradient(to bottom,#f0f8ff,var(--canvas));">
+  <div class="inner">
+    <div class="cbanner" style="border:2px solid var(--gold);">
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1400&h=400&q=80" alt="Thailand">
+      <div class="cbanner-ov"></div>
+      <div class="cbanner-info"><div class="c-flag">🇹🇭</div><div class="c-name">Thailand</div><div style="position:absolute;top:22px;right:34px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 18px;z-index:2;">★ Featured</div><div class="c-tag">Temples · Islands · Street Food · Elephants · Beaches · Culture</div></div>
+      <div class="c-count">5</div>
+    </div>
+    <div class="pgrid">
+
+      <div class="pcard" onclick="openE('Thailand Grand Tour','Bangkok · Chiang Mai · Chiang Rai · Koh Samui','12 Days','$4,495','https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=700&h=500&q=80" alt="Thailand Temples"><div class="pcard-badge">★ Best Seller</div><div class="pcard-days">12 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Thailand Grand Tour</div>
+          <div class="pcard-route">Bangkok · Chiang Mai · Chiang Rai · Koh Samui</div>
+          <div class="pcard-hi"><span class="hi">Grand Palace</span><span class="hi">White Temple</span><span class="hi">Elephant Sanctuary</span></div>
+          <p class="pcard-desc">The complete Thailand — Bangkok's Grand Palace, Chiang Mai's Sunday Walking Street, the famous White Temple at Chiang Rai and a Koh Samui beach finish. North to south, done properly.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$4,495</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Thai Islands Paradise','Phuket · Phi Phi Islands · Krabi · Koh Lanta','10 Days','$4,895','https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=700&h=500&q=80" alt="Thai Islands"><div class="pcard-badge">🏝 Islands</div><div class="pcard-days">10 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Thai Islands Paradise</div>
+          <div class="pcard-route">Phuket · Phi Phi Islands · Krabi · Koh Lanta</div>
+          <div class="pcard-hi"><span class="hi">Maya Bay</span><span class="hi">Sea Kayaking</span><span class="hi">Private Longtail</span></div>
+          <p class="pcard-desc">Private longtail boat to Maya Bay, sea-kayaking through limestone caves in Krabi, sunset from a cliff in Koh Lanta — Thailand's islands at their most spectacular.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$4,895</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Chiang Mai & the North','Bangkok · Chiang Mai · Pai · Chiang Rai','9 Days','$3,795','https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?auto=format&fit=crop&w=700&h=500&q=80" alt="Chiang Mai"><div class="pcard-badge">🐘 Northern</div><div class="pcard-days">9 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Chiang Mai & the North</div>
+          <div class="pcard-route">Bangkok · Chiang Mai · Pai · Chiang Rai</div>
+          <div class="pcard-hi"><span class="hi">Elephant Sanctuary</span><span class="hi">Hill Tribes</span><span class="hi">Doi Inthanon</span></div>
+          <p class="pcard-desc">Half-day at an ethical elephant sanctuary, trekking through hill tribe villages near Pai, sunrise at Thailand's highest peak Doi Inthanon and the famous Sunday Walking Street.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$3,795</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Thailand Honeymoon','Bangkok · Koh Samui · Koh Tao','9 Days','$5,195','https://images.unsplash.com/photo-1504214208698-ea1916a2195a?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?auto=format&fit=crop&w=700&h=500&q=80" alt="Thailand Honeymoon"><div class="pcard-badge">💍 Honeymoon</div><div class="pcard-days">9 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Thailand Honeymoon</div>
+          <div class="pcard-route">Bangkok · Koh Samui · Koh Tao</div>
+          <div class="pcard-hi"><span class="hi">Private Beach Villa</span><span class="hi">Diving</span><span class="hi">Rooftop Dining</span></div>
+          <p class="pcard-desc">Rooftop Bangkok nights, then a private beach villa with butler on Koh Samui, sunrise snorkelling at Koh Tao and a candlelit beach dinner to close the perfect honeymoon.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$5,195</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Bangkok City & Culture','Bangkok · Ayutthaya · River Kwai','6 Days','$2,795','https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=700&h=500&q=80" alt="Bangkok"><div class="pcard-badge">🏙 City Break</div><div class="pcard-days">6 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Bangkok City & Culture</div>
+          <div class="pcard-route">Bangkok · Ayutthaya · River Kwai</div>
+          <div class="pcard-hi"><span class="hi">Grand Palace</span><span class="hi">Night Markets</span><span class="hi">Ancient Temples</span></div>
+          <p class="pcard-desc">The Grand Palace and Wat Pho before the crowds, private long-tail boat through the khlongs, Chatuchak market and a day trip to the ancient royal city of Ayutthaya.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$2,795</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIETNAM -->
+<section class="sec" id="vietnam">
+  <div class="inner">
+    <div class="cbanner">
+      <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1400&h=400&q=80" alt="Vietnam">
+      <div class="cbanner-ov"></div>
+      <div class="cbanner-info"><div class="c-flag">🇻🇳</div><div class="c-name">Vietnam</div><div class="c-tag">Halong Bay · Ancient Towns · Lanterns · Street Food · Rivers · Heritage</div></div>
+      <div class="c-count">5</div>
+    </div>
+    <div class="pgrid">
+
+      <div class="pcard" onclick="openE('Vietnam End to End','Hanoi · Halong Bay · Hoi An · Ho Chi Minh City','13 Days','$4,295','https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=700&h=500&q=80" alt="Vietnam"><div class="pcard-badge">★ Complete</div><div class="pcard-days">13 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Vietnam End to End</div>
+          <div class="pcard-route">Hanoi · Halong Bay · Hoi An · Ho Chi Minh City</div>
+          <div class="pcard-hi"><span class="hi">Halong Bay Cruise</span><span class="hi">Hoi An Lanterns</span><span class="hi">Mekong Delta</span></div>
+          <p class="pcard-desc">Hanoi's street coffee at dawn, overnight cruise through Halong Bay's limestone karsts, lantern-lit evenings in Hoi An and the Mekong Delta by riverboat. Vietnam, north to south.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$4,295</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Halong Bay & Northern Highlands','Hanoi · Halong Bay · Sapa · Ninh Binh','9 Days','$3,595','https://images.unsplash.com/photo-1506665523898-0f07d4e44dc8?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1506665523898-0f07d4e44dc8?auto=format&fit=crop&w=700&h=500&q=80" alt="Halong Bay"><div class="pcard-badge">⛵ Cruise</div><div class="pcard-days">9 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Halong Bay & Northern Highlands</div>
+          <div class="pcard-route">Hanoi · Halong Bay · Sapa · Ninh Binh</div>
+          <div class="pcard-hi"><span class="hi">Junk Boat Stay</span><span class="hi">Sapa Trek</span><span class="hi">Tam Coc Boats</span></div>
+          <p class="pcard-desc">Overnight on a private junk boat through the karsts, kayaking into hidden caves at dawn, terraced rice fields above Sapa and wooden boat rides through Ninh Binh's limestone valleys.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$3,595</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Central Vietnam Heritage','Da Nang · Hoi An · Hue · My Son','8 Days','$3,195','https://images.unsplash.com/photo-1559592413-7cbbf5e78b95?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1559592413-7cbbf5e78b95?auto=format&fit=crop&w=700&h=500&q=80" alt="Hoi An"><div class="pcard-badge">🏛 Heritage</div><div class="pcard-days">8 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Central Vietnam Heritage</div>
+          <div class="pcard-route">Da Nang · Hoi An · Hue · My Son</div>
+          <div class="pcard-hi"><span class="hi">Hoi An Old Town</span><span class="hi">Imperial Hue</span><span class="hi">My Son Sanctuary</span></div>
+          <p class="pcard-desc">Hoi An's lantern-lit ancient town, bicycle rides through rice paddies, the imperial citadel of Hue at sunset and the mysterious thousand-year-old Cham ruins of My Son.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$3,195</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Vietnam Honeymoon','Hanoi · Halong Bay · Hoi An · Phu Quoc Island','11 Days','$5,295','https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=700&h=500&q=80" alt="Vietnam Honeymoon"><div class="pcard-badge">💍 Honeymoon</div><div class="pcard-days">11 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Vietnam Honeymoon</div>
+          <div class="pcard-route">Hanoi · Halong Bay · Hoi An · Phu Quoc</div>
+          <div class="pcard-hi"><span class="hi">Private Junk Boat</span><span class="hi">Lantern Festival</span><span class="hi">Beach Island Finale</span></div>
+          <p class="pcard-desc">Private junk boat on Halong Bay, releasing lanterns on the Thu Bon River in Hoi An, a cooking class for two and a white-sand Phu Quoc beachfront villa to close the perfect honeymoon.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$5,295</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+      <div class="pcard" onclick="openE('Saigon & the Mekong Delta','Ho Chi Minh City · Mekong Delta · Can Tho','6 Days','$2,495','https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=520&q=80')">
+        <div class="pcard-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&h=500&q=80" alt="Mekong Delta"><div class="pcard-badge">🛶 Delta</div><div class="pcard-days">6 Days</div></div>
+        <div class="pcard-body">
+          <div class="pcard-name">Saigon & the Mekong Delta</div>
+          <div class="pcard-route">Ho Chi Minh City · Mekong Delta · Can Tho</div>
+          <div class="pcard-hi"><span class="hi">Cu Chi Tunnels</span><span class="hi">Floating Markets</span><span class="hi">Street Food Tour</span></div>
+          <p class="pcard-desc">Saigon street food by motorbike, the Cu Chi tunnels with a private historian, then the Mekong by wooden boat to the famous floating markets of Can Tho at dawn.</p>
+          <div class="pcard-foot"><div class="pcard-price">From <strong>$2,495</strong> / person</div><button class="ebtn">Enquire Now →</button></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MORE DESTINATIONS -->
+<section class="sec sand" id="more">
+  <div class="inner">
+    <span class="eye" style="display:block;text-align:center;">Explore Further</span>
+    <h2 class="sec-title" style="text-align:center;margin:0 auto 48px;">More Destinations We Run</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+
+      <div onclick="openE('Uncover Jordan','Amman · Petra · Wadi Rum · Dead Sea','9 Days','$5,995','https://images.unsplash.com/photo-1579606032821-60fe09b8e632?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1579606032821-60fe09b8e632?auto=format&fit=crop&w=700&h=350&q=80" alt="Jordan" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Middle East</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Jordan</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Petra · Wadi Rum · Dead Sea</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $4,995</div></div>
+      </div>
+
+      <div onclick="openE('Egypt & the Eternal Nile','Cairo · Luxor · Aswan','9 Days','$8,995','https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=700&h=350&q=80" alt="Egypt" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Middle East</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Egypt</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Cairo · Luxor · Nile Cruise</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $7,995</div></div>
+      </div>
+
+      <div onclick="openE('Best of Turkey','Istanbul · Cappadocia · Pamukkale','10 Days','$6,995','https://images.unsplash.com/photo-1641128324972-af3212f0f37a?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1641128324972-af3212f0f37a?auto=format&fit=crop&w=700&h=350&q=80" alt="Turkey" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Middle East</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Turkey</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Istanbul · Cappadocia · Riviera</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $4,995</div></div>
+      </div>
+
+      <div onclick="openE('Dubai Luxury & Desert','Dubai · Abu Dhabi · Al Maha Desert','7 Days','$6,995','https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=700&h=350&q=80" alt="Dubai" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Middle East</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">UAE & Dubai</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Desert Safari · Luxury · Business</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $4,995</div></div>
+      </div>
+
+      <div onclick="openE('The Italian Grand Tour','Rome · Florence · Venice','10 Days','$11,495','https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1514890547357-a9ee288728e0?auto=format&fit=crop&w=700&h=350&q=80" alt="Italy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Europe</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Italy</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Rome · Florence · Venice · Amalfi</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $9,495</div></div>
+      </div>
+
+      <div onclick="openE('The Greek Isles, Privately','Athens · Santorini · Mykonos','8 Days','$9,995','https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?auto=format&fit=crop&w=700&h=350&q=80" alt="Greece" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Europe</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Greece</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Athens · Santorini · Mykonos</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $9,995</div></div>
+      </div>
+
+      <div onclick="openE('Paris & Provence','Paris · Avignon · Gordes','8 Days','$9,995','https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=700&h=350&q=80" alt="France" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Europe</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">France</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Paris · Versailles · Provence</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $7,995</div></div>
+      </div>
+
+      <div onclick="openE('The Great Migration','Nairobi · Masai Mara · Serengeti','9 Days','$12,995','https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=700&h=350&q=80" alt="Kenya" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Africa</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Kenya & Tanzania</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Masai Mara · Serengeti Safari</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $10,995</div></div>
+      </div>
+
+      <div onclick="openE('Marrakech to the Sahara','Marrakech · Aït Benhaddou · Sahara Desert','8 Days','$6,995','https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1489493585363-d69421e0edd3?auto=format&fit=crop&w=700&h=350&q=80" alt="Morocco" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Africa</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Morocco</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Marrakech · Sahara · Fès</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $5,995</div></div>
+      </div>
+
+      <div onclick="openE('Overwater Maldives Escape','Malé · Private Island Resort','6 Days','$9,995','https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=700&h=350&q=80" alt="Maldives" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Asia Pacific</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Maldives</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Overwater Villas · Private Islands</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $9,995</div></div>
+      </div>
+
+      <div onclick="openE('The Swiss Alps by Rail','Zurich · Lauterbrunnen · Zermatt','8 Days','$10,495','https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=700&h=350&q=80" alt="Switzerland" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Europe</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">Switzerland</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Alps by Rail · Matterhorn · Lakes</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $8,995</div></div>
+      </div>
+
+      <div onclick="openE('Cape Town, Winelands & Kruger','Cape Town · Franschhoek · Kruger','10 Days','$10,495','https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=800&q=80')" style="border-radius:14px;overflow:hidden;position:relative;height:200px;cursor:pointer;">
+        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=700&h=350&q=80" alt="South Africa" style="width:100%;height:100%;object-fit:cover;transition:transform .5s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(28,26,23,.88),rgba(28,26,23,.15) 55%,transparent);"></div>
+        <div style="position:absolute;bottom:0;padding:16px 18px;"><div style="font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-b);margin-bottom:3px;">Africa</div><div style="font-family:var(--dp);font-size:20px;font-weight:600;color:#fff;">South Africa</div><div style="font-size:11px;color:rgba(255,255,255,.65);margin-top:2px;">Cape Town · Winelands · Kruger</div><div style="font-size:11px;color:var(--gold-b);font-weight:600;margin-top:4px;">From $7,995</div></div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a onclick="openE('Custom Destination Enquiry','Your chosen destination','Flexible','Custom Quote','https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80')" style="display:inline-block;border:1.5px solid var(--gold);color:var(--gold);padding:14px 36px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s;" onmouseover="this.style.background='var(--gold)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">Enquire About Any Destination →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="sec sand">
+  <div class="inner">
+    <span class="eye" style="text-align:center;display:block;">Why Travel With Us</span>
+    <h2 class="sec-title" style="text-align:center;margin:0 auto 0;">Travel Planned by Experts.<br>Guided Privately. Backed 24/7.</h2>
+    <div class="wgrid">
+      <div class="wcard"><div class="wnum">01</div><div class="wt">Visa Handled For You</div><div class="wb">We manage all visa paperwork end to end. The only thing you plan is what to pack.</div></div>
+      <div class="wcard"><div class="wnum">02</div><div class="wt">Canada-Based Team</div><div class="wb">Every itinerary planned and operated from Canada — vetted partners, premium stays, logistics that work.</div></div>
+      <div class="wcard"><div class="wnum">03</div><div class="wt">100% Tailor-Made</div><div class="wb">No fixed groups — every journey is designed around your dates, pace and interests.</div></div>
+      <div class="wcard"><div class="wnum">04</div><div class="wt">Private Guides 24/7</div><div class="wb">Your own licensed guide and driver on every trip — no strangers, no waiting, no compromise.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 100 DREAMS -->
+<section class="sec dark" id="dreams">
+  <div class="inner">
+    <div class="dl">
+      <div><div class="d100">100</div><div class="d-sub">The Dreams Project</div></div>
+      <div class="dr">
+        <span class="eye" style="color:var(--gold-b);">Why We Travel</span>
+        <h2>On every trip, we uncover one traveller's dream — and don't let it end at the airport.</h2>
+        <p>On every Heaven's Gateway journey, one guest shares the dream they've been sitting on. Our team helps them take the first real step while still on the trip. The story continues on our journal long after they land.</p>
+        <div class="dsteps">
+          <div class="dstep"><div class="dsn">01</div><div><div class="dst">We find the dream</div><div class="dsb">One guest on every trip shares something they've been holding — a business, a move, a reinvention.</div></div></div>
+          <div class="dstep"><div class="dsn">02</div><div><div class="dst">We help them start it</div><div class="dsb">Our team points toward the first real step, while they're still on the journey.</div></div></div>
+          <div class="dstep"><div class="dsn">03</div><div><div class="dst">We follow it on the journal</div><div class="dsb">The story lives on our blog long after the trip — giving every reader a reason to come back.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec">
+  <div class="inner">
+    <span class="eye" style="text-align:center;display:block;">In Their Words</span>
+    <h2 class="sec-title" style="text-align:center;margin:0 auto;">What Our Travellers Say</h2>
+    <div class="tgrid">
+      <div class="tcard"><div class="tst">★★★★★</div><p class="tq">"Every door was already open — private guides, perfect hotels, zero queues. The visa was sorted before we even thought about it."</p><div class="tn">Aditya & Meera</div><div class="to">Bali Signature Journey</div></div>
+      <div class="tcard"><div class="tst">★★★★★</div><p class="tq">"The Halong Bay overnight was something from a dream. Everything was handled — visa, hotels, every transfer. We just showed up and lived it."</p><div class="tn">Priya & Rohit</div><div class="to">Vietnam End to End</div></div>
+      <div class="tcard"><div class="tst">★★★★★</div><p class="tq">"Thailand with these guys felt like we had a personal fixer who'd lived there for years. The elephant sanctuary was the highlight of our lives."</p><div class="tn">Kabir S.</div><div class="to">Thailand Grand Tour</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec dark cta-sec">
+  <span class="eye" style="color:var(--gold-b);display:block;text-align:center;margin-bottom:20px;">Your Journey Starts Here</span>
+  <h2>Dream It. Document It.<br><em>Live It.</em></h2>
+  <p>Pick any package and hit Enquire — our team replies within 24 hours. Visa handled. Everything sorted.</p>
+  <div class="cta-btns">
+    <a onclick="openE('General Enquiry','Bali / Thailand / Vietnam','Flexible','Custom Quote','https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80')" class="cbtn">Start Your Journey</a>
+    <a href="mailto:team.theheavensgateway@gmail.com" class="cbtn out">team.theheavensgateway@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fg">
+    <div class="fgri">
+      <div class="fc"><div class="fb">The Heaven's Gateway</div><div class="ft">Dream It. Document It. Live It.</div><p class="fd">Canada-based premium travel — 15 curated packages across Bali, Thailand and Vietnam. Visa handled, private guides, honeymoon packages available.</p></div>
+      <div class="fc"><h4>Destinations</h4><a href="#bali">🇮🇩 Bali — 5 Packages</a><a href="#thailand">🇹🇭 Thailand — 5 Packages</a><a href="#vietnam">🇻🇳 Vietnam — 5 Packages</a></div>
+      <div class="fc"><h4>Services</h4><a href="#bali">Honeymoon Packages</a><a href="#bali">Visa Assistance</a><a href="#bali">Business Travel</a><a href="#dreams">100 Dreams Project</a></div>
+      <div class="fc"><h4>Contact</h4><a href="mailto:team.theheavensgateway@gmail.com">team.theheavensgateway@gmail.com</a><a href="https://instagram.com/theheavens_gateway" target="_blank">@theheavens_gateway</a><a href="https://www.theheavensgateway.com" target="_blank">theheavensgateway.com</a></div>
+    </div>
+    <div class="fbot"><span>© 2026 The Heaven's Gateway. All rights reserved.</span><span>Canada · India · Global</span></div>
+  </div>
+</footer>
+
+<script>
+function openE(name,route,days,price,img){
+  document.getElementById('mName').textContent=name;
+  document.getElementById('mRoute').textContent=route;
+  document.getElementById('mDays').textContent=days||'Flexible';
+  document.getElementById('mPrice').textContent=price||'Custom';
+  document.getElementById('mImg').src=img||'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&h=520&q=80';
+  document.getElementById('hPkg').value=name+' — '+route;
+  document.getElementById('fWrap').style.display='block';
+  document.getElementById('successDiv').style.display='none';
+  document.getElementById('mbg').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('mbg').classList.remove('open');document.body.style.overflow='';}
+function closeMBG(e){if(e.target===document.getElementById('mbg'))closeModal();}
+function submitForm(e){
+  e.preventDefault();
+  const f=e.target;
+  const subj=encodeURIComponent('Enquiry: '+document.getElementById('hPkg').value);
+  const body=encodeURIComponent(
+    'PACKAGE: '+document.getElementById('hPkg').value+'\n'+
+    'NAME: '+f.name.value+'\n'+
+    'EMAIL: '+f.email.value+'\n'+
+    'PHONE: '+f.phone.value+'\n'+
+    'TRAVEL MONTH: '+f.month.value+'\n'+
+    'TRAVELLERS: '+f.travellers.value+'\n'+
+    'TYPE: '+f.ptype.value+'\n\n'+
+    'MESSAGE:\n'+f.message.value
+  );
+  window.location.href='mailto:team.theheavensgateway@gmail.com?subject='+subj+'&body='+body;
+  document.getElementById('fWrap').style.display='none';
+  document.getElementById('successDiv').style.display='block';
+  setTimeout(closeModal,4500);
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
